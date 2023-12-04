@@ -1,0 +1,139 @@
+:root {
+    --primary-font: 'Chakra Petch', sans-serif;
+    --secondary-font: 'M PLUS Rounded 1c', sans-serif;
+  
+    --primary-color: #171918;
+    --secondary-color: #ECEEED;
+    --tertiary-color: #30A46C;
+  }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--primary-color);
+    overflow-x: hidden;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+}
+
+h1 {
+    font-size: 2em; 
+}
+
+p {
+    font-family: var(--secondary-font);
+}
+header{
+    padding: 10px 20px; 
+}
+
+.nav-toggler {
+    position: fixed;
+    z-index: 10;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.line {
+    position: absolute;
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: transform 0.3s ease-out,
+    opacity 0.1s ease-out;
+}
+.l1 {
+    transform: translateY(-10px)
+}
+.l3 {
+    transform: translateY(10px)
+}
+.nav-toggler.active .l1 {
+    transform: translateY(0px) rotate(135deg);
+}
+.nav-toggler.active .l2 {
+    opacity: 0;
+}
+.nav-toggler.active .l3 {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+nav {
+    position: fixed;
+    height: 80vw;
+    width: 100vw;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--primary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    transform: translateY(-150%);
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+}
+nav.active {
+    transform: translateY(-8%);
+}
+nav a {
+    font-family: Quicksand, sans-serif;
+    color: var(--secondary-color);
+    font-size: 20px;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.liens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        height: 100px;
+        width: auto;
+        padding: 0 20px;
+        transform: translateY(0%);
+        position: relative;
+        justify-content: space-between;
+    }
+    nav a {
+        margin: 0 20px;
+    }
+    .nav-toggler {
+        display: none;
+    }
+
+    .liens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+}
