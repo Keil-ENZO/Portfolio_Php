@@ -27,6 +27,14 @@ h1 {
     font-size: 2em; 
 }
 
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
 p {
     font-family: var(--secondary-font);
 }
@@ -112,6 +120,37 @@ nav a {
     flex-direction: column;
 }
 
+.header div h1 {
+    display: block;
+}
+
+nav div h1 {
+    display: none;
+}
+
+#about {
+    height: 100vh;
+    padding: 30px;
+}
+
+#about div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+
+
+
+
 @media screen and (min-width: 768px) {
     nav {
         flex-direction: row;
@@ -135,5 +174,30 @@ nav a {
         align-items: center;
         flex-direction: row;
     }
+
+    .header div h1 {
+        display: none;
+    }
     
+    nav div h1 {
+        display: block;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about div {
+        flex-direction: row;  
+
+        width: 70%;  
+    }
+
+    img {
+        width: 50%;
+        margin: 0 50px;
+    }
 }
