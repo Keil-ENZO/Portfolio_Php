@@ -1,0 +1,10 @@
+# Projet Portfolio Php
+
+## Install the nodes_modules for TailwindCSS
+npm install
+
+## Run the development server
+npm run dev
+
+
+
