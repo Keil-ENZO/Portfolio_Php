@@ -1,35 +1,22 @@
-<?php
+<!-- // function connectToDatabase()
+// {
+// include('./env.php');
 
+// try {
+// return new PDO('mysql:host=' . $DB_HOST . ';port=' . $DB_PORT . ';dbname=' . $DB_DATABASE . ';charset=utf8',
+$DB_USER, $DB_PASSWORD);
 
-require __DIR__ . '/vendor/autoload.php';
+// } catch (Exception $e) {
+// die('Erreur : ' . $e->getMessage());
+// }
+// }
 
-use Dotenv\Dotenv;
+// try {
+// $db = connectToDatabase();
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-function connectToDatabase()
-{
-    try {
-        return new PDO('mysql:host=' . $_ENV["DB_HOST"] . ';port=' . $_ENV["DB_PORT"] . ';dbname=' . $_ENV['DB_DATABASE'] . ';charset=utf8', $_ENV['DB_NAME'], $_ENV['DB_PASSWORD']);
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-}
-
-
-try {
-    $db = connectToDatabase();
-
-    // $blog = header('Location: ./src/pages/blog.php');
-
-
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-
-
-?>
+// } catch (Exception $e) {
+// die('Erreur : ' . $e->getMessage());
+// } -->
 
 <!DOCTYPE html>
 <html lang="en">
