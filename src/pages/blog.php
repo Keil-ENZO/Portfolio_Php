@@ -51,34 +51,6 @@ class BlogController
 
 $blogController = new BlogController();
 
-// Traitement du formulaire d'ajout d'article
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create'])) {
-    $title = $_POST['title'] ?? '';
-    $content = $_POST['content'] ?? '';
-
-    if (!empty($title) && !empty($content)) {
-        $blogController->createBlogPost($title, $content);
-    }
-}
-
-// Traitement du formulaire de modification d'article
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    $id = $_POST['id'] ?? '';
-    $title = $_POST['title'] ?? '';
-    $content = $_POST['content'] ?? '';
-    if (!empty($id) && !empty($title) && !empty($content)) {
-        $blogController->updateBlogPost($id, $title, $content);
-    }
-}
-
-// Traitement de la suppression d'article
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete'])) {
-    $id = $_GET['delete'] ?? '';
-    if (!empty($id)) {
-        $blogController->deleteBlogPost($id);
-    }
-}
-
 $blogPosts = $blogController->getBlogPosts();
 ?>
 
@@ -88,19 +60,46 @@ $blogPosts = $blogController->getBlogPosts();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;1,300&family=M+PLUS+Rounded+1c:wght@100;300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Blog</title>
 </head>
 
 <body>
 
-    <h1>Blog</h1>
+    <header>
+        <nav>
+            <div>
+                <h1>KEILENZO</h1>
+            </div>
 
-    <!-- Formulaire d'ajout d'article -->
-    <form action="blog.php" method="post">
-        <input type="text" name="title" placeholder="Titre">
-        <textarea name="content" placeholder="Contenu"></textarea>
-        <button type="submit" name="create">Créer</button>
-    </form>
+            <div class="liens">
+                <a href="../../index.php">About</a>
+                <a href="../../index.php">Skills</a>
+                <a href="../../index.php">Project</a>
+                <a href="../../index.php">Contact</a>
+
+                <a href="blog.php">Blog</a>
+            </div>
+        </nav>
+
+        <div class="header">
+            <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+                <span class="line l1"></span>
+                <span class="line l2"></span>
+                <span class="line l3"></span>
+            </button>
+            <div>
+                <h1>KEILENZO</h1>
+            </div>
+        </div>
+    </header>
+
+    <h1>Blog</h1>
 
     <!-- Affichage des articles existants -->
     <?php
@@ -109,25 +108,11 @@ $blogPosts = $blogController->getBlogPosts();
     <h2><?php echo $post['title']; ?></h2>
     <p><?php echo $post['content']; ?></p>
     <p><?php echo $post['created_at']; ?></p>
-
-    <!-- Formulaire de modification d'article -->
-    <form action="blog.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
-        <input type="text" name="title" placeholder="Titre" value="<?php echo $post['title']; ?>">
-        <textarea name="content" placeholder="Contenu"><?php echo $post['content']; ?></textarea>
-        <button type="submit" name="update">Modifier</button>
-    </form>
-
-    <!-- Formulaire de suppression d'article -->
-    <form action="blog.php" method="get">
-        <input type="hidden" name="delete" value="<?php echo $post['id']; ?>">
-        <button type="submit">Supprimer</button>
-    </form>
-
     <?php
     endforeach;
     ?>
 
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
