@@ -18,6 +18,12 @@ $DB_USER, $DB_PASSWORD);
 // die('Erreur : ' . $e->getMessage());
 // } -->
 
+<?php 
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,51 +41,9 @@ $DB_USER, $DB_PASSWORD);
 
 <body>
 
-    <header>
-        <nav>
-            <div>
-                <h1>KEILENZO</h1>
-            </div>
-
-            <div class="liens">
-                <a href="#about">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Project</a>
-                <a href="#">Contact</a>
-
-                <a href="./src/pages/blog.php">Blog</a>
-            </div>
-        </nav>
-
-        <div class="header">
-            <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
-                <span class="line l1"></span>
-                <span class="line l2"></span>
-                <span class="line l3"></span>
-            </button>
-            <div>
-                <h1>KEILENZO</h1>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id='about'>
-            <h2>Web Developer</h2>
-
-            <div>
-                <h3>Je suis un développeur web junior, passionné par le développement web et les nouvelles technologies.
-                    Je suis à la recherche d'un stage ou d'un emploi dans le domaine du développement web.</h3>
-
-                <img src="./src//style//assets/moi.jpeg" alt="photo de moi">
-            </div>
-
-        </section>
-
-    </main>
-
-
-
+    <?php require_once('./src/layout/header.php');?>
+    <?php require_once('./src/layout/main.php');?>
+    <?php require_once('./src/layout/footer.php');?>
 
     <script src="./src/js/index.js"></script>
 </body>

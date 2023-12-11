@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
 
         if ($user) {
             $_SESSION['email'] = $email; // Assurez-vous que la session est initialisée avec l'email
-            header('Location: indexAdmin.php');
+            header('Location: http://localhost:8888/Portfolio_Php/');
         } else {
             echo "Échec de la connexion. Vérifiez vos informations d'identification.";
         }
