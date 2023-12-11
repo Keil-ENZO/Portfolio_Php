@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <header>
     <nav>
         <div>
@@ -5,14 +10,14 @@
         </div>
 
         <div class="liens">
-            <a href="#about">About</a>
-            <a href="#">Skills</a>
-            <a href="#">Project</a>
-            <a href="#">Contact</a>
-            <a href="./src/pages/blog.php">Blog</a>
+            <a href="http://localhost:8888/Portfolio_Php#about">About</a>
+            <a href="http://localhost:8888/Portfolio_Php#skills">Skills</a>
+            <a href="http://localhost:8888/Portfolio_Php#project">Project</a>
+            <a href="http://localhost:8888/Portfolio_Php/src/pages/mail.php">Contact</a>
+            <a href="http://localhost:8888/Portfolio_Php/src/pages/blog.php">Blog</a>
 
             <?php if (isset($_SESSION['email'])): ?>
-            <a href="./src/pages/indexAdmin.php">Admin</a>
+            <a href="http://localhost:8888/Portfolio_Php/src/pages/indexAdmin.php">Admin</a>
             <?php endif; ?>
         </div>
     </nav>
