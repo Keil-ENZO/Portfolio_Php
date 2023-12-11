@@ -1,10 +1,18 @@
 <?php
 
+session_start();
+
 require_once '../routes/blogController.php';
 
 use Blog\BlogController;
 
 $BlogController = new BlogController();
+
+if(!isset($_SESSION['email'])){
+    header('Location: connexion.php');
+    exit(); 
+
+}
 
 
 ?>

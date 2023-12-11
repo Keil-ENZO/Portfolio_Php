@@ -18,6 +18,9 @@ $DB_USER, $DB_PASSWORD);
 // die('Erreur : ' . $e->getMessage());
 // } -->
 
+<?php 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">

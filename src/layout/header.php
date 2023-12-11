@@ -1,16 +1,25 @@
 <?php
-session_start();
 
-if(!isset($_SESSION['email'])){
-    header('Location: connexion.php');
-    exit(); 
 
+if(isset($_SESSION['email'])) {
+    //Affichage du nom de l'utilisateur
+    $email = $_SESSION['email'];
+    $email = substr($email, 0, -10);
 }
 
-//Affichage du nom de l'utilisateur
-$email = $_SESSION['email'];
-$email = substr($email, 0, -10);
+ // deconnexion de utilisateur 
+ function deconnexion()
+ {
+     $_SESSION = array();
+     session_destroy();
+     header('Location: connexion.php');
+     exit();
+ }    
 
+ // deconnexion de utilisateur
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
+    deconnexion();
+}
 ?>
 
 <header>
@@ -29,6 +38,9 @@ $email = substr($email, 0, -10);
             <?php if (isset($_SESSION['email'])): ?>
             <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Admin</a>
             <?php endif; ?>
+
+
+
         </div>
     </nav>
 

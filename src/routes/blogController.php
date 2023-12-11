@@ -48,14 +48,7 @@ class BlogController
         // Pas besoin de rediriger après la suppression
     }
 
-    // deconnexion de utilisateur 
-    public function deconnexion()
-    {
-        $_SESSION = array();
-        session_destroy();
-        header('Location: connexion.php');
-        exit();
-    }    
+   
 }
 
 $blogController = new BlogController();
@@ -92,7 +85,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete'])) {
 
 $blogPosts = $blogController->getBlogPosts();
 
-// deconnexion de utilisateur
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
-    $blogController->deconnexion();
-}

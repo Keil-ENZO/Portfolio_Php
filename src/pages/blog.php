@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once '../routes/getBlog.php';
 use Blog\getBlog;
