@@ -6,7 +6,7 @@ include('../../env.php');
 
 use Database\DBConnection;
 
-class BlogController
+class getBlog
 {
     private $db;
 

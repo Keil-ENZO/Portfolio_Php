@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+if(!isset($_SESSION['email'])){
+    header('Location: connexion.php');
+    exit(); 
+
+}
+
+//Affichage du nom de l'utilisateur
+$email = $_SESSION['email'];
+$email = substr($email, 0, -10);
+
 ?>
 
 <header>
@@ -17,7 +27,7 @@ session_start();
             <a href="http://localhost:8888/Portfolio_Php/src/pages/blog.php">Blog</a>
 
             <?php if (isset($_SESSION['email'])): ?>
-            <a href="http://localhost:8888/Portfolio_Php/src/pages/indexAdmin.php">Admin</a>
+            <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Admin</a>
             <?php endif; ?>
         </div>
     </nav>

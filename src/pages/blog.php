@@ -1,10 +1,10 @@
 <?php
 
 require_once '../routes/getBlog.php';
-use Blog\BlogController;
+use Blog\getBlog;
 
-$blogController = new BlogController();
-$blogPosts = $blogController->getBlogPosts();
+$getBlog = new getBlog();
+$blogPosts = $getBlog->getBlogPosts();
 ?>
 
 <!DOCTYPE html>

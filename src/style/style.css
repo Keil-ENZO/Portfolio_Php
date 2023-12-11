@@ -133,12 +133,25 @@ nav div h1 {
     padding: 30px;
 }
 
-#about div {
+#about .content {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column;
     height: 100%;
+}
+
+.content div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+.content div h2 {
+    font-size: 8vw;
+    line-height: 120px;
 }
 
 img {
@@ -190,14 +203,12 @@ img {
         align-items: center;
     }
 
-    #about div {
-        flex-direction: row;  
-
-        width: 70%;  
+    #about .content {
+        flex-direction: row;
     }
 
     img {
-        width: 50%;
+        width: 40%;
         margin: 0 50px;
     }
 }
