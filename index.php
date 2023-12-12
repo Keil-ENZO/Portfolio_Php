@@ -23,12 +23,10 @@ session_start();
     <?php require_once('./src/layout/header.php');?>
 
     <?php if (isset($_SESSION['email'])): ?>
-    <?php require_once('./src/layout/adminmain.php');?>
+    <?php require_once('./src/layout/adminMain.php');?>
     <?php else: ?>
     <?php require_once('./src/layout/main.php');?>
     <?php endif; ?>
-
-
 
     <?php require_once('./src/layout/footer.php');?>
 

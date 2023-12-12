@@ -1,5 +1,5 @@
 <?php
-require_once('../routes/getMain.php');
+require_once(__DIR__ . '/../routes/getMain.php');
 
 use Main\MainController;
 
@@ -19,7 +19,7 @@ $mainPost = $MainController->getMain();
             </div>
 
 
-            <img src="./src//style//assets/moi.jpeg" alt="photo de moi">
+            <img src="<?php echo $mainPost['imgName'] ?>" alt="photo de moi">
 
         </div>
 
