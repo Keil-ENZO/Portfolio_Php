@@ -1,11 +1,11 @@
 <?php
-require_once(__DIR__ . '/../routes/getMain.php');
+require_once(__DIR__ . '/../routes/mainController.php');
 
 use Main\MainController;
 
-$MainController = new MainController();
+$mainController = new MainController();
+$mainPost = $mainController->getMain();
 
-$mainPost = $MainController->getMain();
 
 ?>
 

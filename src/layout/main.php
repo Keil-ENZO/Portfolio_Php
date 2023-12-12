@@ -1,14 +1,24 @@
+<?php
+require_once(__DIR__ . '/../routes/mainController.php');
+
+use Main\MainController;
+
+$mainController = new MainController();
+$mainPost = $mainController->getMain();
+
+
+?>
+
 <main>
     <section id='about'>
         <div class="content">
             <div>
-                <h2>Web Developer</h2>
-                <h3>I am a junior web developer, passionate about web development and new technologies. I am looking for
-                    an internship or a job in the field of web development.</h3>
+                <h2><?php echo $mainPost['title'] ?></h2>
+                <h3><?php echo $mainPost['text'] ?></h3>
             </div>
 
 
-            <img src="./src//style//assets/moi.jpeg" alt="photo de moi">
+            <img src="<?php echo $mainPost['imgName'] ?>" alt="photo de moi">
         </div>
 
     </section>
