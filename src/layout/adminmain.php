@@ -1,14 +1,26 @@
+<?php
+require_once('../routes/getMain.php');
+
+use Main\MainController;
+
+$MainController = new MainController();
+
+$mainPost = $MainController->getMain();
+
+?>
+
 <main>
     <section id='about'>
         <div class="content">
+            <h2>main admin</h2>
             <div>
-                <h2>Web Developer</h2>
-                <h3>I am a junior web developer, passionate about web development and new technologies. I am looking for
-                    an internship or a job in the field of web development.</h3>
+                <h2><?php echo $mainPost['title'] ?></h2>
+                <h3><?php echo $mainPost['text'] ?></h3>
             </div>
 
 
             <img src="./src//style//assets/moi.jpeg" alt="photo de moi">
+
         </div>
 
     </section>

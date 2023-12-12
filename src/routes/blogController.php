@@ -84,4 +84,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete'])) {
 }
 
 $blogPosts = $blogController->getBlogPosts();
-

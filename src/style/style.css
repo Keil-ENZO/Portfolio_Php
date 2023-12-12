@@ -1,6 +1,6 @@
 :root {
     --primary-font: 'Chakra Petch', sans-serif;
-    --secondary-font: 'M PLUS Rounded 1c', sans-serif;
+    --secondary-font:'Roboto Slab', serif;
   
     --primary-color: #171918;
     --secondary-color: #ECEEED;
@@ -35,7 +35,7 @@ h3 {
     font-size: 1.5em;
 }
 
-p {
+p, a, li, span, input, textarea, button {
     font-family: var(--secondary-font);
 }
 header{
@@ -100,12 +100,19 @@ nav.active {
     transform: translateY(-8%);
 }
 nav a {
-    font-family: Quicksand, sans-serif;
     color: var(--secondary-color);
     font-size: 20px;
     display: block;
     margin: 10px 0;
     text-decoration: none;
+
+    transition: text-decoration 0.3s ease-out;
+
+}
+
+nav a:hover {
+   text-decoration: underline;
+   text-decoration:  rgba(127,45,253,1)  wavy underline;
 }
 
 .header {
@@ -152,16 +159,51 @@ nav div h1 {
 .content div h2 {
     font-size: 8vw;
     line-height: 120px;
+    background: linear-gradient(176deg, rgba(34,193,195,1) 10%, rgba(127,45,253,1) 68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 
 img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
     filter: grayscale(100%);
 }
 
+#skills {
+    padding: 30px;
+}
 
+#skills .contentSkills {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+#skills .contentSkills img {
+    width: 15vw;
+    max-width: 150px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 20vw;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+
+    border-radius: 50em;
+    padding: 50px;
+    margin: 20px;
+    background: rgb(34,193,195);
+    background: linear-gradient(176deg, rgba(34,193,195,1) 10%, rgba(127,45,253,1) 68%);
+}
 
 
 @media screen and (min-width: 768px) {
@@ -210,5 +252,9 @@ img {
     img {
         width: 40%;
         margin: 0 50px;
+    }
+
+    #skills .contentSkills img {
+        margin: 20px;
     }
 }
