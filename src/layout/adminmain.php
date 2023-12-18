@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
     $text = $_POST['text'];
 
     $mainController->updateMain($title, $text, $mainPost['imgName'], $mainPost['imgData']);
-    
+
     // Assurez-vous de rediriger ou de rafraîchir la page après la mise à jour
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit();
@@ -20,8 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
 <main>
     <section id='about'>
+        <h2>main admin</h2>
+
+        <!-- <button class="btn"><img class="svg" src="../../src/style/assets/edit.svg" alt="edit"></button> -->
+
+        <div>
+        <input class="btn" type="checkbox" id="switch" />
+        <label class="btnLabel" for="switch"></label>
+        </div>
+       
+        <!-- <label for="switch" /> -->
+
         <div class="content">
-            <h2>main admin</h2>
             <div>
                 <h2><?php echo $mainPost['title'] ?></h2>
                 <h3><?php echo $mainPost['text'] ?></h3>
@@ -30,18 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
             <img src="<?php echo $mainPost['imgName'] ?>" alt="photo de moi">
         </div>
 
-        <div class="content">
-            <h2>main admin</h2>
+        <div class="content2">
 
             <form action="" method="post">
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" value="<?php echo $mainPost['title']; ?>" required>
-                </div>
-                <div>
-                    <label for="text">Text</label>
-                    <textarea name="text" id="text" required><?php echo $mainPost['text']; ?></textarea>
-                </div>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<?php echo $mainPost['title']; ?>" required>
+
+                <label for="text">Text</label>
+                <textarea name="text" id="text" cols="50" rows="5" required><?php echo $mainPost['text']; ?></textarea>
 
                 <button type="submit" name="updateMain">Update</button>
             </form>

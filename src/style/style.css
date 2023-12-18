@@ -141,7 +141,7 @@ nav div h1 {
     padding: 30px;
 }
 
-#about .content {
+#about .content, #about .content2 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -206,6 +206,168 @@ img {
     background: linear-gradient(176deg, rgba(34,193,195,1) 10%, rgba(127,45,253,1) 68%);
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 30px;
+
+    font-family: var(--secondary-font);
+
+}
+
+from label {
+    font-size: 2.5em;
+    margin: 10px 0;
+
+
+}
+
+form input {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
+}
+
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
+
+}
+
+form button {
+    width: 100px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
+    transition: 0.3s ease-out;
+}
+
+form button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.svg {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 0;
+    margin: 0;
+}
+
+/* .btn {
+    width: 100px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
+    transition: 0.3s ease-out;
+
+    position: absolute;
+    top: 120px;
+    right: 20px;
+} */
+
+.btn {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+    
+}
+
+.btnLabel {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 140px;
+	height: 70px;
+	background: #fbfbfb;
+	border: 1px solid #e8eae9;
+	display: block;
+	border-radius: 100px;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+}
+
+.btnLabel:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 60px;
+	height: 60px;
+	background: #fbfbfb;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 0 rgba(0, 0, 0, .08);
+	border-radius: 30px;
+	transition: 0.3s;
+}
+
+.btn:checked+.btnLabel {
+	background: #86d993;
+}
+
+.btn:checked+.btnLabel:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.btn:active:after {
+	width: 80px;
+}
+
+
+
+.content2 {
+    display: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 0.3s ease-out;
+    position: absolute;
+}
+
+.active2 {
+    display: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 0.3s ease-out;
+    position: absolute;
+
+}
+
+.view {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: 0.3s ease-out;
+    position: relative;
+}
+
+
+
 
 @media screen and (min-width: 768px) {
     nav {
@@ -246,7 +408,7 @@ img {
         align-items: center;
     }
 
-    #about .content {
+    #about .content, #about .content2 {
         flex-direction: row;
     }
 
@@ -258,4 +420,5 @@ img {
     #skills .contentSkills img {
         margin: 20px;
     }
+
 }

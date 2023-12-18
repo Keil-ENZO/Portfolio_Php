@@ -15,6 +15,6 @@
         </div>
         <div class="footer__social">
             <a href="https://www.linkedin.com/in/kevin-lenzotti-8b1b3b1b2/" target="_blank"><img
-                    src="./src/img/linkedin.png" alt="linkedin"></a>
+                    src="" alt="linkedin"></a>
 
 </footer>
