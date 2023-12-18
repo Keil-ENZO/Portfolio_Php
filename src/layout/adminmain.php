@@ -6,7 +6,16 @@ use Main\MainController;
 $mainController = new MainController();
 $mainPost = $mainController->getMain();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
+    $title = $_POST['title'];
+    $text = $_POST['text'];
 
+    $mainController->updateMain($title, $text, $mainPost['imgName'], $mainPost['imgData']);
+    
+    // Assurez-vous de rediriger ou de rafraîchir la page après la mise à jour
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit();
+}
 ?>
 
 <main>
@@ -18,34 +27,32 @@ $mainPost = $mainController->getMain();
                 <h3><?php echo $mainPost['text'] ?></h3>
             </div>
 
-
             <img src="<?php echo $mainPost['imgName'] ?>" alt="photo de moi">
-
         </div>
 
+        <div class="content">
+            <h2>main admin</h2>
+
+            <form action="" method="post">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" value="<?php echo $mainPost['title']; ?>" required>
+                </div>
+                <div>
+                    <label for="text">Text</label>
+                    <textarea name="text" id="text" required><?php echo $mainPost['text']; ?></textarea>
+                </div>
+
+                <button type="submit" name="updateMain">Update</button>
+            </form>
+
+            <img src="<?php echo $mainPost['imgName']; ?>" alt="photo de moi">
+        </div>
     </section>
 
     <section id="skills">
-
         <div class="contentSkills">
-
-            <div class="circle">
-                <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
-            </div>
-
-            <div class="circle">
-                <img src="./src//style//assets/react 2.png" alt="React">
-            </div>
-
-            <div class="circle">
-                <img src="./src//style//assets/nodejs.png" alt="Node">
-            </div>
-
-            <div class="circle">
-                <img src="./src//style//assets/Mysql.png" alt="Mysql">
-            </div>
-
+            <!-- Vos autres éléments ici -->
         </div>
     </section>
-
 </main>
