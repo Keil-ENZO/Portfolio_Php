@@ -27,10 +27,6 @@ h1 {
     font-size: 2em; 
 }
 
-h2 {
-    font-size: 2em;
-}
-
 h3 {
     font-size: 1.5em;
 }
@@ -38,6 +34,8 @@ h3 {
 p, a, li, span, input, textarea, button {
     font-family: var(--secondary-font);
 }
+
+
 header{
     padding: 10px 20px; 
 }
@@ -159,7 +157,7 @@ nav div h1 {
 
 .content div h2 {
     font-size: 8vw;
-    line-height: 120px;
+    /* line-height: 120px; */
     background: linear-gradient(176deg, rgba(34,193,195,1) 10%, rgba(127,45,253,1) 68%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -175,6 +173,7 @@ img {
 
 #skills {
     padding: 30px;
+    height: 60vh;
 }
 
 #skills .contentSkills {
@@ -275,24 +274,6 @@ form button:hover {
     margin: 0;
 }
 
-/* .btn {
-    width: 100px;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-
-    border: 1px solid var(--secondary-color);
-    transition: 0.3s ease-out;
-
-    position: absolute;
-    top: 120px;
-    right: 20px;
-} */
-
 .btn {
 	height: 0;
 	width: 0;
@@ -366,6 +347,63 @@ form button:hover {
     position: relative;
 }
 
+#project  {
+    padding: 30px;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#project .contentProject {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contentProject div img {
+   width: 298px;
+
+    height: 200px;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+
+    border-radius: 0px;
+    border-radius: 20px 20px 0  0 ;
+}
+
+
+.contentProject div {
+    width: 300px;
+    height: 100%;
+    border-radius: 20px;
+    transition: 0.3s ease-out;
+
+    border-left: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+     cursor: pointer;
+}
+
+.contentProject div:hover {
+    background-color: #2f2f2f;
+    transition: 0.3s ease-out;
+}
+
+.contentProject div p, .contentProject div h2 {
+    margin: 10px;
+}
+
+.contentProject div a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
 
 
 
@@ -420,5 +458,20 @@ form button:hover {
     #skills .contentSkills img {
         margin: 20px;
     }
+
+    .content div h2 {
+        font-size: 8vw;
+        line-height: 120px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+
 
 }

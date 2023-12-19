@@ -24,6 +24,7 @@ $mainPost = $mainController->getMain();
     </section>
 
     <section id="skills">
+        <h2>Skills</h2>
 
         <div class="contentSkills">
 
@@ -44,6 +45,11 @@ $mainPost = $mainController->getMain();
             </div>
 
         </div>
+    </section>
+
+    <section>
+        <h1>ZEN</h1>
+        <h1>Portfolio</h1>
     </section>
 
 </main>

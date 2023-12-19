@@ -73,7 +73,7 @@ if(isset($_POST['sendMail'])) {
     $Mail->sendMail($to, $subject, $content);
     $Mail->postMail($sendMail, $subject, $content);
 
-    $mail->setFrom($to);
+    $mail->setFrom($sendMail);
     $mail->addAddress($to);
     $mail->isHTML(true);
     $mail->Subject = $_POST['subject'];
