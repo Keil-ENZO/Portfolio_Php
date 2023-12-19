@@ -4,7 +4,16 @@ namespace Mail;
 require_once '../db/conectDb.php';
 include('../../env.php');
 
+
+require '../routes/phpMailer/src/Exception.php';
+require '../routes/phpMailer/src/PHPMailer.php';
+require '../routes/phpMailer/src/SMTP.php';
+
+
 use Database\DBConnection;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 
 $to = "enzo.keil06@gmail.com";
 
@@ -44,6 +53,18 @@ class Mail {
 }
 
 if(isset($_POST['sendMail'])) {
+
+    $mail = new PHPMailer(true);
+    $mail -> isSMTP();
+    $mail -> Host = 'smtp.gmail.com';
+    $mail -> SMTPAuth = true;
+    $mail -> Username = $to;
+    $mail -> Password = $_ENV['MAIL_PASSWORD'];
+    $mail -> SMTPSecure = 'ssl';
+    $mail -> Port = 465;
+
+    
+
     $sendMail = $_POST['sendMail'];
     $subject = $_POST['subject'];
     $content = $_POST['content'];
@@ -51,6 +72,16 @@ if(isset($_POST['sendMail'])) {
     $Mail = new Mail();
     $Mail->sendMail($to, $subject, $content);
     $Mail->postMail($sendMail, $subject, $content);
+
+    $mail->setFrom($to);
+    $mail->addAddress($to);
+    $mail->isHTML(true);
+    $mail->Subject = $_POST['subject'];
+    $mail->Body = $_POST['content'];
+
+    $mail->send();
+
+    echo "Message envoyé !";
 }
 
 

@@ -303,10 +303,9 @@ form button:hover {
 .btnLabel {
 	cursor: pointer;
 	text-indent: -9999px;
-	width: 140px;
-	height: 70px;
+	width: 70px;
+	height: 40px;
 	background: #fbfbfb;
-	border: 1px solid #e8eae9;
 	display: block;
 	border-radius: 100px;
     position: absolute;
@@ -319,16 +318,17 @@ form button:hover {
 	position: absolute;
 	top: 5px;
 	left: 5px;
-	width: 60px;
-	height: 60px;
-	background: #fbfbfb;
+	width: 30px;
+	height: 30px;
+	background: var(--primary-color);
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 0 rgba(0, 0, 0, .08);
 	border-radius: 30px;
 	transition: 0.3s;
 }
 
 .btn:checked+.btnLabel {
-	background: #86d993;
+    background: rgb(34,193,195);
+    background: linear-gradient(176deg, rgba(34,193,195,1) 10%, rgba(127,45,253,1) 68%);
 }
 
 .btn:checked+.btnLabel:after {
@@ -337,7 +337,7 @@ form button:hover {
 }
 
 .btn:active:after {
-	width: 80px;
+	width: 40px;
 }
 
 

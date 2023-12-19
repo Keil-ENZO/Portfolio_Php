@@ -20,15 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
 <main>
     <section id='about'>
-        <h2>main admin</h2>
+        <h2>Main Admin</h2>
 
         <!-- <button class="btn"><img class="svg" src="../../src/style/assets/edit.svg" alt="edit"></button> -->
 
         <div>
-        <input class="btn" type="checkbox" id="switch" />
-        <label class="btnLabel" for="switch"></label>
+            <input class="btn" type="checkbox" id="switch" />
+            <label class="btnLabel" for="switch"></label>
         </div>
-       
+
         <!-- <label for="switch" /> -->
 
         <div class="content">
@@ -57,8 +57,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
     </section>
 
     <section id="skills">
+
         <div class="contentSkills">
-            <!-- Vos autres éléments ici -->
+
+            <div class="circle">
+                <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
+            </div>
+
+            <div class="circle">
+                <img src="./src//style//assets/react 2.png" alt="React">
+            </div>
+
+            <div class="circle">
+                <img src="./src//style//assets/nodejs.png" alt="Node">
+            </div>
+
+            <div class="circle">
+                <img src="./src//style//assets/Mysql.png" alt="Mysql">
+            </div>
+
         </div>
     </section>
 </main>
