@@ -1,9 +1,7 @@
 <?php
-
 session_start();
 
-require_once('../routes/postMail.php')
-
+require_once('../routes/postMail.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +32,12 @@ require_once('../routes/postMail.php')
 
         <label for="content">Message</label>
         <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+
+        <?php
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $token;
+        echo '<input type="hidden" name="csrf_token" value="' . $token . '">';
+        ?>
 
         <input type="submit" value="Envoyer">
     </form>

@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
             <a href="http://localhost:8888/Portfolio_Php/src/pages/blog.php">Blog</a>
 
             <?php if (isset($_SESSION['email'])): ?>
-            <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Admin</a>
+            <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Add Blog</a>
             <?php endif; ?>
 
 

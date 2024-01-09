@@ -8,12 +8,13 @@ use Blog\BlogController;
 
 $BlogController = new BlogController();
 
-if(!isset($_SESSION['email'])){
+// Vérifier si la session 'email' est définie
+if (!isset($_SESSION['email'])) {
     header('Location: connexion.php');
-    exit(); 
-
+    exit();
 }
 
+$email = $_SESSION['email']; // Assurez-vous de définir la variable $email
 
 ?>
 
@@ -34,9 +35,9 @@ if(!isset($_SESSION['email'])){
 
 <body>
 
-    <?php require_once('../layout/header.php');?>
+    <?php require_once('../layout/header.php'); ?>
 
-    <h1>Bienvenue <?php echo $email ?></h1>
+    <h1>Bienvenue <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></h1>
 
     <!-- Formulaire de deconnexion -->
     <form action="editBlog.php" method="post">
@@ -56,15 +57,17 @@ if(!isset($_SESSION['email'])){
     <?php
     foreach ($blogPosts as $post) :
     ?>
-    <h2><?php echo $post['title']; ?></h2>
-    <p><?php echo $post['content']; ?></p>
-    <p><?php echo $post['created_at']; ?></p>
+    <h2><?php echo htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'); ?></h2>
+    <p><?php echo htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8'); ?></p>
+    <p><?php echo htmlspecialchars($post['created_at'], ENT_QUOTES, 'UTF-8'); ?></p>
 
     <!-- Formulaire de modification d'article -->
     <form action="editBlog.php" method="post">
         <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
-        <input type="text" name="title" placeholder="Titre" value="<?php echo $post['title']; ?>">
-        <textarea name="content" placeholder="Contenu"><?php echo $post['content']; ?></textarea>
+        <input type="text" name="title" placeholder="Titre"
+            value="<?php echo htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'); ?>">
+        <textarea name="content"
+            placeholder="Contenu"><?php echo htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
         <button type="submit" name="update">Modifier</button>
     </form>
 
@@ -77,8 +80,6 @@ if(!isset($_SESSION['email'])){
     <?php
     endforeach;
     ?>
-
-
 
 </body>
 

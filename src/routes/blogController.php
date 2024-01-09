@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create'])) {
     if (!empty($title) && !empty($content)) {
         $blogController->createBlogPost($title, $content);
 
-        header('Location: indexAdmin.php');
+        header('Location: blog.php');
     }
 }
 

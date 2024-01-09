@@ -15,24 +15,26 @@ class ConnexionAdmin
 
     public function __construct()
     {
-        // Utilisation de $_ENV directement pour accéder aux variables d'environnement
         $this->db = new DBConnection($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE'], $_ENV['DB_PORT']);
     }
 
     public function connexion($email, $mdp)
     {
         $db = $this->db->getPDO();
-        // Utilisez une méthode de hachage sécurisée pour stocker les mots de passe
-        $query = $db->prepare('SELECT * FROM user WHERE email = ? AND mdp = ?');
-        $query->execute([$email, $mdp]);
+        
+        $query = $db->prepare('SELECT * FROM user WHERE email = ?');
+        $query->execute([$email]);
         $user = $query->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            // Initialisez la variable de session 'email' ici
-            $_SESSION['email'] = $email;
+            // Vérifiez d'abord le mot de passe non haché (si les mots de passe ne sont pas hachés dans la base de données)
+            if ($mdp === $user['mdp'] || password_verify($mdp, $user['mdp'])) {
+                $_SESSION['email'] = $email;
+                return $user;
+            }
         }
 
-        return $user;
+        return null;
     }
 }
 
@@ -40,21 +42,23 @@ $ConnexionAdmin = new ConnexionAdmin();
 
 // Traitement formulaire de connexion 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
 
     if (!empty($email) && !empty($password)) {
         $user = $ConnexionAdmin->connexion($email, $password);
 
         if ($user) {
-            $_SESSION['email'] = $email; // Assurez-vous que la session est initialisée avec l'email
+            $_SESSION['email'] = $email;
             header('Location: http://localhost:8888/Portfolio_Php/');
+            exit;
         } else {
             echo "Échec de la connexion. Vérifiez vos informations d'identification.";
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,10 +81,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required>
         </div>
+
+        <?php
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['csrf_token'] = $token;
+        echo '<input type="hidden" name="csrf_token" value="' . $token . '">';
+        ?>
+
         <button type="submit" name="connexion">Connexion</button>
     </form>
-
-
 
 </body>
 

@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
             <div>
                 <a href="https://enzo-keil.websr.fr">
-                    <img src="./src//style//assets/portfolio.png" alt="portfolio">
+                    <img src="./src//style//assets/logo.png" alt="portfolio">
                     <h2>Portfolio</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
                         reprehenderit
