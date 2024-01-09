@@ -43,5 +43,6 @@ require_once('../routes/postMail.php');
     </form>
 
 </body>
+<script src="../js/index.js"></script>
 
 </html>

@@ -33,6 +33,20 @@ h3 {
 
 p, a, li, span, input, textarea, button {
     font-family: var(--secondary-font);
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration:  rgba(127,45,253,1)  wavy underline;
+ }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 
@@ -135,7 +149,7 @@ nav div h1 {
 }
 
 #about {
-    height: 100vh;
+    height: 90vh;
     padding: 30px;
 }
 
@@ -349,12 +363,16 @@ form button:hover {
 
 #project  {
     padding: 30px;
-    height: 50vh;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 
+}
+
+#project h1 {
+    margin: 50px;
 }
 
 #project .contentProject {
@@ -380,7 +398,8 @@ form button:hover {
 
 .contentProject div {
     width: 300px;
-    height: 100%;
+    height: 420px;
+    margin: 20px 0;
     border-radius: 20px;
     transition: 0.3s ease-out;
 
@@ -404,8 +423,38 @@ form button:hover {
     color: var(--secondary-color);
 }
 
+.footer {
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--primary-color);
+    border-top: 1px solid var(--secondary-color);
+}
 
+.footer__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
+.footer_liens {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer_liens div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: right;
+    margin: 0 20px;
+}
+
+.footer_liens div a {
+    margin: 5px ;
+}
 
 @media screen and (min-width: 768px) {
     nav {

@@ -24,32 +24,71 @@ $mainPost = $mainController->getMain();
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h1>Skills</h1>
 
         <div class="contentSkills">
 
-            <div class="circle">
-                <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
+
+            <div>
+                <div class="circle">
+                    <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
+                </div>
+
+                <div class="circle">
+                    <img src="./src//style//assets/react 2.png" alt="React">
+                </div>
+            </div>
+            <div>
+                <div class="circle">
+                    <img src="./src//style//assets/nodejs.png" alt="Node">
+                </div>
+
+                <div class="circle">
+                    <img src="./src//style//assets/Mysql.png" alt="Mysql">
+                </div>
             </div>
 
-            <div class="circle">
-                <img src="./src//style//assets/react 2.png" alt="React">
-            </div>
 
-            <div class="circle">
-                <img src="./src//style//assets/nodejs.png" alt="Node">
-            </div>
-
-            <div class="circle">
-                <img src="./src//style//assets/Mysql.png" alt="Mysql">
-            </div>
 
         </div>
     </section>
 
-    <section>
-        <h1>ZEN</h1>
-        <h1>Portfolio</h1>
+    <section id="project">
+        <h1>Project</h1>
+
+        <div class="contentProject">
+
+            <div>
+                <a href="https://enzo-keil.websr.fr">
+                    <img src="./src//style//assets/logo.png" alt="portfolio">
+                    <h2>Portfolio</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
+                        reprehenderit
+                        tempora molestias nesciunt </p>
+                </a>
+            </div>
+
+            <div>
+                <a href="https://github.com/Ydays-Zen/Zen/tree/main/Zen-ydays">
+                    <img src="./src//style//assets/zen.png" alt="zen">
+                    <h2>Zen</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
+                        reprehenderit
+                        tempora molestias nesciunt </p>
+                </a>
+            </div>
+
+            <div>
+                <a href="https://github.com/Keil-ENZO/ForumPhp">
+                    <img src="./src//style//assets/forum.png" alt="forum">
+                    <h2>Forum Php</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
+                        reprehenderit
+                        tempora molestias nesciunt </p>
+                </a>
+            </div>
+        </div>
     </section>
+
 
 </main>
