@@ -1,22 +1,22 @@
 <?php
 
 
-if(isset($_SESSION['email'])) {
+if (isset($_SESSION['email'])) {
     //Affichage du nom de l'utilisateur
     $email = $_SESSION['email'];
     $email = substr($email, 0, -10);
 }
 
- // deconnexion de utilisateur 
- function deconnexion()
- {
-     $_SESSION = array();
-     session_destroy();
-     header('Location: connexion.php');
-     exit();
- }    
+// deconnexion de utilisateur 
+function deconnexion()
+{
+    $_SESSION = array();
+    session_destroy();
+    header('Location: connexion.php');
+    exit();
+}
 
- // deconnexion de utilisateur
+// deconnexion de utilisateur
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
     deconnexion();
 }
@@ -25,7 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
 <header>
     <nav>
         <div>
-            <h1>KEILENZO</h1>
+            <h1>
+                <a href="http://localhost:8888/Portfolio_Php">
+                    KEILENZO
+                </a>
+            </h1>
         </div>
 
         <div class="liens">
@@ -35,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
             <a href="http://localhost:8888/Portfolio_Php/src/pages/mail.php">Contact</a>
             <a href="http://localhost:8888/Portfolio_Php/src/pages/blog.php">Blog</a>
 
-            <?php if (isset($_SESSION['email'])): ?>
-            <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Add Blog</a>
+            <?php if (isset($_SESSION['email'])) : ?>
+                <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Add Blog</a>
             <?php endif; ?>
 
 
