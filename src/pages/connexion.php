@@ -1,4 +1,5 @@
 <?php
+
 namespace Blog;
 
 session_start();
@@ -21,7 +22,7 @@ class ConnexionAdmin
     public function connexion($email, $mdp)
     {
         $db = $this->db->getPDO();
-        
+
         $query = $db->prepare('SELECT * FROM user WHERE email = ?');
         $query->execute([$email]);
         $user = $query->fetch(PDO::FETCH_ASSOC);
@@ -65,6 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;1,300&family=M+PLUS+Rounded+1c:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+
     <title>Blog</title>
 </head>
 

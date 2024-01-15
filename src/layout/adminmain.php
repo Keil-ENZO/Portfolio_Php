@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
 <main>
     <section id='about'>
-        <h2>Hello Admin !!</h2>
+        <h1>Bienvenue <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></h1>
+
 
         <!-- <button class="btn"><img class="svg" src="../../src/style/assets/edit.svg" alt="edit"></button> -->
 

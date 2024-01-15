@@ -12,7 +12,7 @@ function deconnexion()
 {
     $_SESSION = array();
     session_destroy();
-    header('Location: connexion.php');
+    header('Location: http://localhost:8888/Portfolio_Php/');
     exit();
 }
 
@@ -41,8 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
 
             <?php if (isset($_SESSION['email'])) : ?>
                 <a href="http://localhost:8888/Portfolio_Php/src/pages/editBlog.php">Add Blog</a>
+                <!-- Formulaire de deconnexion -->
+                <form action="http://localhost:8888/Portfolio_Php/" method="post">
+                    <button type="submit" name="deconnexion">Deconnexion</button>
+                </form>
             <?php endif; ?>
 
+            <!-- http://localhost:8888/Portfolio_Php/src/pages/connexion.php -->
 
 
         </div>

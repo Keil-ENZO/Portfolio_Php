@@ -277,7 +277,7 @@ form textarea {
 }
 
 form button {
-  width: 100px;
+  /* width: 100px; */
   padding: 10px;
   margin: 10px 0;
   border: none;
@@ -475,6 +475,7 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   height: 85vh;
 }
 
@@ -527,6 +528,64 @@ form button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
 }
+
+/************************** Page Blog **************************/
+
+.blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contentBlog {
+    background-color: #232323;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 80vw;
+}
+
+.contentBlog h2 {
+    margin-bottom: 20px;
+}
+
+.contentBlog div {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.pagination {
+    display: flex;
+}
+
+.pagination a {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #232323;
+
+    transition: all 0.3s ease-out;
+
+}
+
+.pagination a:hover {
+    background-color: #2f2f2f;
+}
+
+.blog input {
+    width: 300px;
+    height: 50px;
+}
+
+
+.actions {
+    display: flex;
+    margin: 20px 0;
+}
+
 
 @media screen and (min-width: 768px) {
   nav {
@@ -603,6 +662,7 @@ form button:hover {
     font-size: 2em;
   }
 
+
   .mail form {
     width: 500px;
   }
@@ -614,5 +674,14 @@ form button:hover {
 
   .mail form .inputs div {
     display: flex;
+    width: 100%;
   }
+
+  .contentBlog {
+    background-color: #232323;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 600px;
+}
 }

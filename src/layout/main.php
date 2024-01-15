@@ -10,6 +10,7 @@ $mainPost = $mainController->getMain();
 ?>
 
 <main>
+
     <section id='about'>
         <div class="content">
             <div>
@@ -62,9 +63,7 @@ $mainPost = $mainController->getMain();
                 <a href="https://enzo-keil.websr.fr">
                     <img src="./src//style//assets/logo.png" alt="portfolio">
                     <h2>Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Creation de mon Portfolio avec Three Js </p>
                 </a>
             </div>
 
@@ -72,9 +71,8 @@ $mainPost = $mainController->getMain();
                 <a href="https://github.com/Ydays-Zen/Zen/tree/main/Zen-ydays">
                     <img src="./src//style//assets/zen.png" alt="zen">
                     <h2>Zen</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Creation d une application web pour poster des livres et et lire les pubi=lcaition des autres
+                        utilisateurs</p>
                 </a>
             </div>
 
@@ -82,9 +80,8 @@ $mainPost = $mainController->getMain();
                 <a href="https://github.com/Keil-ENZO/ForumPhp">
                     <img src="./src//style//assets/forum.png" alt="forum">
                     <h2>Forum Php</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Development of an interactive forum with PHP for the backend and MySQL for the database. Topic
+                        creation and user management features.</p>
                 </a>
             </div>
         </div>
