@@ -31,7 +31,7 @@ require_once('../routes/postMail.php');
                     <input type="email" name="sendMail" id="sendMail" required>
                 </div>
                 <div>
-                    <label for="subject">Sujet</label>
+                    <label for="subject">Object</label>
                     <input type="text" name="subject" id="subject" required>
                 </div>
             </div>
@@ -39,7 +39,7 @@ require_once('../routes/postMail.php');
 
 
 
-            <label for="content">Message</label>
+            <label for="content">Content</label>
             <textarea name="content" id="content" cols="30" rows="10" required></textarea>
 
             <?php
@@ -48,7 +48,7 @@ require_once('../routes/postMail.php');
             echo '<input type="hidden" name="csrf_token" value="' . $token . '">';
             ?>
 
-            <div class="btnSend"> <input type="submit" class="send" value="Envoyer">
+            <div class="btnSend"> <input type="submit" class="send" value="Send">
             </div>
         </form>
     </main>

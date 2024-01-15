@@ -76,26 +76,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
 
 <body>
 
-    <h1>Connexion</h1>
+    <main class="connect">
+        <h1>Sign in Admin</h1>
 
-    <form action="" method="post">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" required>
-        </div>
+        <form action="" method="post">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" required>
+            </div>
 
-        <?php
-        $token = bin2hex(random_bytes(32));
-        $_SESSION['csrf_token'] = $token;
-        echo '<input type="hidden" name="csrf_token" value="' . $token . '">';
-        ?>
+            <?php
+            $token = bin2hex(random_bytes(32));
+            $_SESSION['csrf_token'] = $token;
+            echo '<input type="hidden" name="csrf_token" value="' . $token . '">';
+            ?>
 
-        <button type="submit" name="connexion">Connexion</button>
-    </form>
+            <div class="btnConnect">
+
+                <button type="submit" name="connexion">Connexion</button>
+            </div>
+        </form>
+    </main>
 
 </body>
 

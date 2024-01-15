@@ -51,6 +51,11 @@ button {
   resize: none;
 }
 
+button {
+    cursor: pointer;
+    width: 100px;
+}
+
 a:hover {
   text-decoration: underline;
   text-decoration: rgba(127, 45, 253, 1) wavy underline;
@@ -277,7 +282,6 @@ form textarea {
 }
 
 form button {
-  /* width: 100px; */
   padding: 10px;
   margin: 10px 0;
   border: none;
@@ -532,60 +536,91 @@ form button:hover {
 /************************** Page Blog **************************/
 
 .blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.contentBlog {
+  background-color: #232323;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.contentBlog h2 {
+  margin-bottom: 20px;
+}
+
+.contentBlog div {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+}
+
+.pagination {
+  display: flex;
+}
+
+.pagination a {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #232323;
+
+  transition: all 0.3s ease-out;
+}
+
+.pagination a:hover {
+  background-color: #2f2f2f;
+}
+
+.blog input {
+  width: 300px;
+  height: 50px;
+}
+
+.actions {
+  display: flex;
+  margin: 20px 0;
+}
+
+
+/************************** Page Connexion **************************/
+.connect {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    height: 100vh;
 }
 
-.contentBlog {
-    background-color: #232323;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80vw;
+
+.connect form div {
+    display: flex;
+    flex-direction: column;
+}
+.connect form input {
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+
+    border: 1px solid var(--secondary-color);
 }
 
-.contentBlog h2 {
-    margin-bottom: 20px;
-}
-
-.contentBlog div {
+.connect .btnConnect {
     width: 100%;
     display: flex;
     align-items: end;
     justify-content: flex-end;
 }
-
-.pagination {
-    display: flex;
-}
-
-.pagination a {
-    margin: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #232323;
-
-    transition: all 0.3s ease-out;
-
-}
-
-.pagination a:hover {
-    background-color: #2f2f2f;
-}
-
-.blog input {
-    width: 300px;
-    height: 50px;
-}
-
-
-.actions {
-    display: flex;
-    margin: 20px 0;
-}
-
 
 @media screen and (min-width: 768px) {
   nav {
@@ -662,7 +697,6 @@ form button:hover {
     font-size: 2em;
   }
 
-
   .mail form {
     width: 500px;
   }
@@ -683,5 +717,5 @@ form button:hover {
     margin: 20px;
     border-radius: 10px;
     width: 600px;
-}
+  }
 }

@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deconnexion'])) {
                 </form>
             <?php endif; ?>
 
-            <!-- http://localhost:8888/Portfolio_Php/src/pages/connexion.php -->
 
 
         </div>

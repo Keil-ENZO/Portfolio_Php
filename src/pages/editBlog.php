@@ -37,13 +37,13 @@ $email = $_SESSION['email']; // Assurez-vous de définir la variable $email
 
 
     <main class="blog">
-        <h2>Creation Article</h2>
+        <h2>Add Article</h2>
 
         <!-- Formulaire d'ajout d'article -->
         <form action="editBlog.php" method="post">
-            <input type="text" name="title" placeholder="Titre">
-            <textarea name="content" placeholder="Contenu"></textarea>
-            <button type="submit" name="create">Créer</button>
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="content" placeholder="Content"></textarea>
+            <button type="submit" name="create">Create</button>
         </form>
 
         <!-- Affichage des articles existants -->
@@ -67,15 +67,15 @@ $email = $_SESSION['email']; // Assurez-vous de définir la variable $email
                     <!-- Formulaire de modification d'article -->
                     <form action="editBlog.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
-                        <input type="text" name="title" placeholder="Titre" value="<?php echo htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'); ?>">
-                        <textarea name="content" placeholder="Contenu"><?php echo htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
-                        <button type="submit" name="update">Modifier</button>
+                        <input type="text" name="title" placeholder="Title" value="<?php echo htmlspecialchars($post['title'], ENT_QUOTES, 'UTF-8'); ?>">
+                        <textarea name="content" placeholder="Content"><?php echo htmlspecialchars($post['content'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+                        <button type="submit" name="update">Update</button>
                     </form>
 
                     <!-- Formulaire de suppression d'article -->
                     <form action="editBlog.php" method="get">
                         <input type="hidden" name="delete" value="<?php echo $post['id']; ?>">
-                        <button type="submit">Supprimer</button>
+                        <button type="submit">Delete</button>
                     </form>
                 </div>
             </div>

@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
     $mainController->updateMain($title, $text, $mainPost['imgName'], $mainPost['imgData']);
 
-    // Assurez-vous de rediriger ou de rafraîchir la page après la mise à jour
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit();
 }
@@ -20,17 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
 
 <main>
     <section id='about'>
-        <h1>Bienvenue <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></h1>
+        <h1>Welcome <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></h1>
 
 
-        <!-- <button class="btn"><img class="svg" src="../../src/style/assets/edit.svg" alt="edit"></button> -->
 
         <div>
             <input class="btn" type="checkbox" id="switch" />
             <label class="btnLabel" for="switch"></label>
         </div>
 
-        <!-- <label for="switch" /> -->
 
         <div class="content">
             <div>
@@ -60,24 +57,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
     <section id="skills">
         <h1>Skills</h1>
 
-
         <div class="contentSkills">
 
-            <div class="circle">
-                <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
+
+            <div>
+                <div class="circle">
+                    <img src="./src//style//assets/Tailwin.png" alt="Tailwindcss">
+                </div>
+
+                <div class="circle">
+                    <img src="./src//style//assets/react 2.png" alt="React">
+                </div>
+            </div>
+            <div>
+                <div class="circle">
+                    <img src="./src//style//assets/nodejs.png" alt="Node">
+                </div>
+
+                <div class="circle">
+                    <img src="./src//style//assets/Mysql.png" alt="Mysql">
+                </div>
             </div>
 
-            <div class="circle">
-                <img src="./src//style//assets/react 2.png" alt="React">
-            </div>
 
-            <div class="circle">
-                <img src="./src//style//assets/nodejs.png" alt="Node">
-            </div>
-
-            <div class="circle">
-                <img src="./src//style//assets/Mysql.png" alt="Mysql">
-            </div>
 
         </div>
     </section>
@@ -91,9 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
                 <a href="https://enzo-keil.websr.fr">
                     <img src="./src//style//assets/logo.png" alt="portfolio">
                     <h2>Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Creation de mon Portfolio avec Three Js </p>
                 </a>
             </div>
 
@@ -101,9 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
                 <a href="https://github.com/Ydays-Zen/Zen/tree/main/Zen-ydays">
                     <img src="./src//style//assets/zen.png" alt="zen">
                     <h2>Zen</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Creation d une application web pour poster des livres et et lire les pubi=lcaition des autres
+                        utilisateurs</p>
                 </a>
             </div>
 
@@ -111,9 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
                 <a href="https://github.com/Keil-ENZO/ForumPhp">
                     <img src="./src//style//assets/forum.png" alt="forum">
                     <h2>Forum Php</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus labore, dignissimos
-                        reprehenderit
-                        tempora molestias nesciunt </p>
+                    <p>Development of an interactive forum with PHP for the backend and MySQL for the database. Topic
+                        creation and user management features.</p>
                 </a>
             </div>
         </div>
