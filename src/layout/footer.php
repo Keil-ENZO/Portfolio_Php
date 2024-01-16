@@ -4,7 +4,7 @@
         <div class="footer__text">
             <h1>KEILENZO</h1>
             <div class="footer__copyrigth">
-                <p>© 2024 KEILENZO</p>
+                <p>© 2024 Portfolio KEILENZO</p>
             </div>
 
 
@@ -30,7 +30,6 @@
 
         </div> -->
 
-        <!-- copyrigth 2021 -->
 
 
 </footer>
