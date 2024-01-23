@@ -456,6 +456,17 @@ form button:hover {
   justify-content: space-around;
 }
 
+.form_reseau {
+  display: flex;
+  align-items: center;
+}
+
+.form_reseau img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
 .footer_liens {
   display: flex;
   justify-content: space-around;

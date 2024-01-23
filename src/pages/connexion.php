@@ -27,8 +27,8 @@ class ConnexionAdmin
         $query->execute([$email]);
         $user = $query->fetch(PDO::FETCH_ASSOC);
 
+
         if ($user) {
-            // Vérifiez d'abord le mot de passe non haché (si les mots de passe ne sont pas hachés dans la base de données)
             if ($mdp === $user['mdp'] || password_verify($mdp, $user['mdp'])) {
                 $_SESSION['email'] = $email;
                 return $user;

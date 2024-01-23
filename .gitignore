@@ -1,6 +1,4 @@
 .DS_Store
-vendor
 .env
-node_modules
 .vscode
 

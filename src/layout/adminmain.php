@@ -21,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
     <section id='about'>
         <h1>Welcome <?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></h1>
 
-
-
         <div>
             <input class="btn" type="checkbox" id="switch" />
             <label class="btnLabel" for="switch"></label>
@@ -90,28 +88,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateMain'])) {
         <div class="contentProject">
 
             <div>
-                <a href="https://enzo-keil.websr.fr">
+                <a href="https://enzo-keil.websr.fr" target="_blank">
                     <img src="./src//style//assets/logo.png" alt="portfolio">
                     <h2>Portfolio</h2>
-                    <p>Creation de mon Portfolio avec Three Js </p>
+                    <p>Creation of my Portfolio with Three Js and Tailwindcss</p>
                 </a>
             </div>
 
             <div>
-                <a href="https://github.com/Ydays-Zen/Zen/tree/main/Zen-ydays">
+                <a href="https://github.com/Ydays-Zen/Zen/tree/main/Zen-ydays" target="_blank">
                     <img src="./src//style//assets/zen.png" alt="zen">
                     <h2>Zen</h2>
-                    <p>Creation d une application web pour poster des livres et et lire les pubi=lcaition des autres
-                        utilisateurs</p>
+                    <p>Creation of a social network for readers, they will be able to add books and read those of others
+                    </p>
                 </a>
             </div>
 
             <div>
-                <a href="https://github.com/Keil-ENZO/ForumPhp">
-                    <img src="./src//style//assets/forum.png" alt="forum">
-                    <h2>Forum Php</h2>
-                    <p>Development of an interactive forum with PHP for the backend and MySQL for the database. Topic
-                        creation and user management features.</p>
+                <a href="https://github.com/Keil-ENZO/tailwind-generator" target="_blank">
+                    <img src="./src/style/assets/ChatGPT-Logo.jpg" alt="tailwind-generator">
+                    <h2>Tailwind-generator</h2>
+                    <p>This project aims to use chatgpt to generate simple pages with Tailwindcss for style</p>
                 </a>
             </div>
         </div>
