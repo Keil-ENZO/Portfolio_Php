@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create'])) {
     if (!empty($title) && !empty($content)) {
         $blogController->createBlogPost($title, $content);
 
-        header('Location: blog.php');
+        header('Location: /Portfolio_Php/src/pages/blog.php');
     }
 }
 

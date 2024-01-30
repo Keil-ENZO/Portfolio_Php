@@ -10,7 +10,7 @@ $BlogController = new BlogController();
 
 // Vérifier si la session 'email' est définie
 if (!isset($_SESSION['email'])) {
-    header('Location: connexion.php');
+    header('Location: /Portfolio_Php/src/pages/connexion.php');
     exit();
 }
 

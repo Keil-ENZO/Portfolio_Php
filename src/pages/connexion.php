@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
 
         if ($user) {
             $_SESSION['email'] = $email;
-            header('Location: http://localhost:8888/Portfolio_Php/');
+            header('Location: /Portfolio_Php/');
             exit;
         } else {
             echo "Échec de la connexion. Vérifiez vos informations d'identification.";

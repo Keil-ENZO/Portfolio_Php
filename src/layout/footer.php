@@ -20,14 +20,14 @@
 
 
         <div class="footer_liens">
-            <div><a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#project">Project</a>
+            <div><a href="/Portfolio_Php#about">About</a>
+                <a href="/Portfolio_Php#skills">Skills</a>
+                <a href="/Portfolio_Php#project">Project</a>
             </div>
-            <div><a href="#">Contact</a>
-                <a href="http://localhost:8888/Portfolio_Php/src/pages/blog.php">Blog</a>
+            <div><a href="/Portfolio_Php/src/pages/mail.php">Contact</a>
+                <a href="/Portfolio_Php/src/pages/blog.php">Blog</a>
                 <?php if (isset($_SESSION['email'])) : ?>
-                    <a href="./src/pages/indexAdmin.php">Admin</a>
+                    <a href="/Portfolio_Php/src/pages/editBlog.php">Add Blog</a>
                 <?php endif; ?>
             </div>
 
